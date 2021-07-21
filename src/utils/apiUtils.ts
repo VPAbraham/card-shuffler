@@ -1,4 +1,4 @@
-export const getCardPool = async () => {
+export const getNewCardPool = async () => {
   const handOfCards: string[] = ["init"]
   const fetchCardPool = async () => {
     try {

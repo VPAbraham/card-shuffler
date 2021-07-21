@@ -1,10 +1,10 @@
 import CardContainer from '../components/CardContainer';
 import { useEffect } from 'react';
-import { getCardPool } from '../utils/apiUtils';
+import { getNewCardPool } from '../utils/apiUtils';
 
 const Home = () => {
   useEffect(() => {
-    getCardPool();
+    getNewCardPool();
   })
   return (
     <div>
