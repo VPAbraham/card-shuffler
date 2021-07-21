@@ -1,9 +1,9 @@
 import './App.scss';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-  APP
+      APP
     </div>
   );
 }
