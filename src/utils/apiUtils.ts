@@ -1,3 +1,5 @@
+import { Card, Hand } from '../types';
+
 type NewCardPool = {
   success: boolean,
   deck_id: string,
@@ -6,15 +8,7 @@ type NewCardHand = {
   cards: Card[],
 }
 
-export type Card = {
-  code: string,
-  image: string,
-  images: string[],
-  suit: string,
-  value: string
-}
 
-export type Hand = Card[];
 
 export const getNewCardPool = async () => {
   let newCardPool: NewCardPool = {

@@ -1,9 +1,19 @@
 import Card from '../components/Card';
+import { Hand } from '../types';
+
+type HandContainerProps = {
+
+}
+
+const HandContainer = () => {
+
+}
+
 const CardContainer = () => {
 
   return (
-    <div>
-      CARD CONTAINER
+    <div className='box'>
+
     </div>
   )
 }

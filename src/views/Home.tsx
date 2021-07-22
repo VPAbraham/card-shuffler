@@ -1,7 +1,8 @@
 import CardContainer from '../components/CardContainer';
 import Dropdown from '../components/Dropdown';
 import { useEffect, useState } from 'react';
-import { getNewCardPool, getNewCardHand, Hand, Card } from '../utils/apiUtils';
+import { Hand, Card } from '../types';
+import { getNewCardPool, getNewCardHand } from '../utils/apiUtils';
 
 
 const Home = () => {
@@ -45,7 +46,7 @@ const Home = () => {
   const handCountOptions = [1, 2, 3, 4];
 
   return (
-    <div>
+    <div className="container">
       <h2>Home Page</h2>
       <button className="button" onClick={shuffleCards}>SHUFFLE</button>
       <Dropdown options={handCountOptions} label={'How Many Hands?'} />
