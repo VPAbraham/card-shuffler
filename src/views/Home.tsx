@@ -1,27 +1,35 @@
 import CardContainer from '../components/CardContainer';
 import Dropdown from '../components/Dropdown';
 import { useEffect, useState } from 'react';
-import { getNewCardPool, getNewCardHand } from '../utils/apiUtils';
+import { getNewCardPool, getNewCardHand, Hand, Card } from '../utils/apiUtils';
+
 
 const Home = () => {
-  const [numberOfHands, setNumberOfHands] = useState(3);
+  const [cardsPerHand, setCardsPerHand] = useState<number>(5);
+  const [numberOfHands, setNumberOfHands] = useState<number>(2);
   const [cardPool, setCardPool] = useState("");
-  const [cardHands, setCardHands] = useState([]);
+  const [cardHands, setCardHands] = useState<Hand[]>([]);
 
   const retrieveNewCards = async () => {
     const deck = await getNewCardPool();
     deck && setCardPool(deck);
-    console.log("cardPool", cardPool);
     return;
   }
 
   const retrieveNewHands = async (deckId: string) => {
     for (let i = 0; i < numberOfHands; i++) {
-      const hand = await getNewCardHand(deckId);
-      console.log("SINGLE HAND", hand)
-      // setCardHands({...cardHands, hand})
+      await getNewCardHand(deckId).then((res: Hand) => {
+        if (!cardHands.length) {
+          let result = [res]
+          setCardHands(result)
+        } else {
+          let result = [...cardHands, res]
+          setCardHands(result)
+        }
+      })
     }
   }
+
   useEffect(() => {
     if (!cardPool) {
       retrieveNewCards();
@@ -29,6 +37,7 @@ const Home = () => {
   })
 
   const shuffleCards = () => {
+    setCardHands([])
     retrieveNewCards();
     retrieveNewHands(cardPool);
   }

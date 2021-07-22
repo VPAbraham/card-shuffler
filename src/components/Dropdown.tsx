@@ -30,7 +30,7 @@ const Dropdown = ({ options, label }: DropdownProps) => {
             return (
               <a
                 href='#'
-                className={`dropdown-item ${val == selectedVal && 'is-active'}`}
+                className={`dropdown-item ${val === selectedVal && 'is-active'}`}
                 key={val}
               >
                 {val}
