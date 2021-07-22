@@ -7,13 +7,11 @@ type DropdownProps = {
 
 const Dropdown = ({ options, label }: DropdownProps) => {
   const [isActive, setIsActive] = useState(false);
-  const [selectedVal, setSelectedVal] = useState(0);
+  const [selectedVal, setSelectedVal] = useState(1);
   const selectOption = (value: any) => {
     setSelectedVal(value);
     setIsActive(false);
   }
-  console.log(selectedVal)
-
   const handleClick = (event: Event) => {
     const { target } = event;
     target && setSelectedVal(parseInt((target as HTMLButtonElement).value));

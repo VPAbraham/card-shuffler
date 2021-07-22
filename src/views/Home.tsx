@@ -22,9 +22,15 @@ const Home = () => {
       // setCardHands({...cardHands, hand})
     }
   }
-  const shuffleCards = async () => {
-    await retrieveNewCards()
-    retrieveNewHands(cardPool)
+  useEffect(() => {
+    if (!cardPool) {
+      retrieveNewCards();
+    }
+  })
+
+  const shuffleCards = () => {
+    retrieveNewCards();
+    retrieveNewHands(cardPool);
   }
   const handSizeOptions = [1, 2, 3, 4, 5];
   const handCountOptions = [1, 2, 3, 4];
