@@ -20,17 +20,15 @@ export const getNewCardPool = async () => {
     console.log('Request error: ', error);
   }
   console.log("newcardPool", newCardPool)
-  return newCardPool ? newCardPool : null;
+  return newCardPool ? newCardPool.deck_id : null;
 };
 interface NewCardHand {
   success: boolean,
-  deck_id: string,
-  cards: object[]
+  cards: object[],
 }
 export const getNewCardHand = async (deckId: string) => {
   let newCardHand: object = {
     success: false,
-    deck_id: "",
     cards: []
   };
   try {

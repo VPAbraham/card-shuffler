@@ -10,7 +10,7 @@ const Home = () => {
 
   const retrieveNewCards = async () => {
     const deck = await getNewCardPool();
-    deck && setCardPool(deck.deck_id);
+    deck && setCardPool(deck);
     console.log("cardPool", cardPool);
     return;
   }
