@@ -1,4 +1,5 @@
 import CardContainer from '../components/CardContainer';
+import Dropdown from '../components/Dropdown';
 import { useEffect, useState } from 'react';
 import { getNewCardPool, getNewCardHand } from '../utils/apiUtils';
 
@@ -6,11 +7,6 @@ const Home = () => {
   const [numberOfHands, setNumberOfHands] = useState(3);
   const [cardPool, setCardPool] = useState("");
   const [cardHands, setCardHands] = useState([]);
-
-  // useEffect(() => {
-  //   getNewCardPool();
-  //   getNewCardHand();
-  // })
 
   const retrieveNewCards = async () => {
     const deck = await getNewCardPool();
@@ -35,8 +31,9 @@ const Home = () => {
   return (
     <div>
       <h2>Home Page</h2>
-      <CardContainer />
       <button className="button" onClick={shuffleCards}>SHUFFLE</button>
+      <Dropdown />
+      <CardContainer />
     </div>
   )
 }
