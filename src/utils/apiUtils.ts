@@ -1,12 +1,19 @@
+interface NewCardPool {
+  success: boolean,
+  deck_id: string,
+}
+
 export const getNewCardPool = async () => {
-  let newCardPool: object = {};
+  let newCardPool: NewCardPool = {
+    success: false,
+    deck_id: ""
+  };
   try {
     const response = await fetch(
       'https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1',
       { method: 'GET' }
     );
-    const data: object = await response.json();
-    console.log(data);
+    const data = await response.json();
     newCardPool = data;
   }
   catch (error) {
@@ -24,7 +31,6 @@ export const getNewCardHand = async () => {
       { method: 'GET' }
     );
     const data: object = await response.json();
-    console.log(data);
     newCardHand = data;
   }
   catch (error) {

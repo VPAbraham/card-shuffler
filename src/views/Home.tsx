@@ -4,22 +4,26 @@ import { getNewCardPool, getNewCardHand } from '../utils/apiUtils';
 
 const Home = () => {
   const [numberOfHands, setNumberOfHands] = useState(1);
-  const [cardPool, setCardPool] = useState(null);
+  const [cardPool, setCardPool] = useState({});
   const [cardHands, setCardHands] = useState([]);
 
-  useEffect(() => {
-    getNewCardPool();
-    getNewCardHand();
-  })
+  // useEffect(() => {
+  //   getNewCardPool();
+  //   getNewCardHand();
+  // })
 
   const retrieveNewCards = async () => {
-    const deckId = await getNewCardPool();
-    console.log("deckID", deckId);
+    const deck = await getNewCardPool();
+    deck && setCardPool(deck.deck_id);
+    console.log("cardPool", cardPool);
+    return;
   }
+
   return (
     <div>
       <h2>Home Page</h2>
       <CardContainer />
+      <button onClick={retrieveNewCards}>SHUFFLE</button>
     </div>
   )
 }
