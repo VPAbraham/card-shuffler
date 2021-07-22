@@ -23,7 +23,7 @@ const Home = () => {
     <div>
       <h2>Home Page</h2>
       <CardContainer />
-      <button onClick={retrieveNewCards}>SHUFFLE</button>
+      <button className="button" onClick={retrieveNewCards}>SHUFFLE</button>
     </div>
   )
 }
