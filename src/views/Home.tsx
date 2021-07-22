@@ -26,13 +26,15 @@ const Home = () => {
     await retrieveNewCards()
     retrieveNewHands(cardPool)
   }
-
+  const handSizeOptions = [1, 2, 3, 4, 5];
+  const handCountOptions = [1, 2, 3, 4];
 
   return (
     <div>
       <h2>Home Page</h2>
       <button className="button" onClick={shuffleCards}>SHUFFLE</button>
-      <Dropdown />
+      <Dropdown options={handCountOptions} label={'How Many Hands?'} />
+      <Dropdown options={handSizeOptions} label={'How Many Cards Per Hand?'} />
       <CardContainer />
     </div>
   )
