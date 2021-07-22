@@ -22,12 +22,20 @@ export const getNewCardPool = async () => {
   console.log("newcardPool", newCardPool)
   return newCardPool ? newCardPool : null;
 };
-
-export const getNewCardHand = async () => {
-  let newCardHand: object = {};
+interface NewCardHand {
+  success: boolean,
+  deck_id: string,
+  cards: object[]
+}
+export const getNewCardHand = async (deckId: string) => {
+  let newCardHand: object = {
+    success: false,
+    deck_id: "",
+    cards: []
+  };
   try {
     const response = await fetch(
-      'https://deckofcardsapi.com/api/deck/gf7tapc2oshz/draw/?count=5',
+      `https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=5`,
       { method: 'GET' }
     );
     const data: object = await response.json();
