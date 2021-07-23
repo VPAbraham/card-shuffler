@@ -15,7 +15,7 @@ const HandContainer = ({ hand }: HandContainerProps) => {
   const handError = <p>Whoops! Something's wrong with this hand. Try spinning again!</p>
   return (
     <div className='columns hand-container'>
-      {!hand && handError}
+      {hand.length < 1 && handError}
       {hand.map((card) => {
         return (
           <>
