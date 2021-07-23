@@ -7,7 +7,7 @@ import { getNewCardPool, getNewCardHand } from '../utils/apiUtils';
 
 const Home = () => {
   const [cardsPerHand, setCardsPerHand] = useState<number>(5);
-  const [numberOfHands, setNumberOfHands] = useState<number>(5);
+  const [numberOfHands, setNumberOfHands] = useState<number>(4);
   const [cardPool, setCardPool] = useState("");
   const [cardHands, setCardHands] = useState<Hand[]>([]);
 

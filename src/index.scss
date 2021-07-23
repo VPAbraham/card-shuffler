@@ -3,10 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+html, body, #root, .App {
+  height: 100vh;
+}
 html {
   overflow-y: auto;
   background-color: rgb(31, 31, 31);
+  height: 100%;
 }
 
 body {
@@ -15,7 +18,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-height: 100vh;
+  height: 100%;
   width: 80%;
   background-color: rgb(62, 62, 62);
   margin: auto;

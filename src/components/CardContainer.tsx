@@ -13,7 +13,7 @@ type CardContainerProps = {
 
 const HandContainer = ({ hand }: HandContainerProps) => {
   return (
-    <div className='column hand-container'>
+    <div className='columns hand-container'>
       {hand.map((card) => {
         return (<CardDisplay card={card} />)
       })}
@@ -30,7 +30,7 @@ const CardContainer = ({ hands }: CardContainerProps) => {
   })
 
   return (
-    <div className='card-container columns is-mobile'>
+    <div className='card-container is-flex-direction-column'>
       {currentHands.map((hand) => {
         return (<HandContainer hand={hand} />)
       })}
