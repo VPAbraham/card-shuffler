@@ -46,7 +46,7 @@ const Home = () => {
   const handCountOptions = [1, 2, 3, 4];
 
   return (
-    <div className="home container">
+    <div className="home">
       <h2>Home Page</h2>
       <button className="button" onClick={shuffleCards}>SHUFFLE</button>
       <Dropdown options={handCountOptions} label={'How Many Hands?'} />

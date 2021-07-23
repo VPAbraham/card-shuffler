@@ -11,9 +11,8 @@ type CardContainerProps = {
 }
 
 const HandContainer = ({ hand }: HandContainerProps) => {
-  console.log("SINGLE HAND", hand)
   return (
-    <div className='hand-container box'>
+    <div className='tile hand-container is-flex'>
       {hand.map((card) => {
         return (<CardDisplay card={card} />)
       })}
@@ -30,7 +29,7 @@ const CardContainer = ({ hands }: CardContainerProps) => {
   })
 
   return (
-    <div className='box'>
+    <div className='tile is-ancestor is-vertical'>
       {currentHands.map((hand) => {
         return (<HandContainer hand={hand} />)
       })}
