@@ -8,7 +8,7 @@ type DropdownProps = {
 
 const Dropdown = ({ options, label, stateUpdate }: DropdownProps) => {
   const [isActive, setIsActive] = useState(false);
-  const [selectedVal, setSelectedVal] = useState();
+  const [selectedVal, setSelectedVal] = useState<number>();
   const selectOption = (value: any) => {
     setSelectedVal(value);
     setIsActive(false);
@@ -17,13 +17,10 @@ const Dropdown = ({ options, label, stateUpdate }: DropdownProps) => {
 
   const handleClick = (e: any) => {
     e.preventDefault();
-    console.log(e.target.innerHTML)
-    stateUpdate(e.target.innerHTML)
+    let newVal = parseInt(e.target.innerText)
+    stateUpdate(newVal)
+    setSelectedVal(newVal)
     setIsActive(false);
-    // const { target } = event;
-    // const output = (target as HTMLButtonElement).getAttribute('value');
-    // console.log("output", output)
-    // target && setSelectedVal(parseInt((target as HTMLButtonElement).value));
   }
 
   return (
@@ -37,13 +34,13 @@ const Dropdown = ({ options, label, stateUpdate }: DropdownProps) => {
         <div className='dropdown-content'>
           {options.map((val) => {
             return (
-              <button
+              <a
                 className={`dropdown-item ${val === selectedVal ? 'is-active' : ''}`}
                 key={val}
                 onClick={handleClick}
               >
                 {val}
-              </button>
+              </a>
             )
           })}
         </div>
