@@ -21,7 +21,7 @@ const Home = () => {
   const retrieveNewHands = async (deckId: string) => {
     let retrievedHand: Hand[] = []
     for (let i = 0; i < numberOfHands; i++) {
-      const res = await getNewCardHand(deckId)
+      const res = await getNewCardHand(deckId, cardsPerHand)
       if (retrievedHand.length < 1) {
         retrievedHand.push(res)
       } else {
@@ -49,8 +49,15 @@ const Home = () => {
     <div className="home container">
       <h2>Home Page</h2>
       <button className="button" onClick={shuffleCards}>SHUFFLE</button>
-      <Dropdown options={handCountOptions} label={'How Many Hands?'} />
-      <Dropdown options={handSizeOptions} label={'How Many Cards Per Hand?'} />
+      <Dropdown
+        options={handCountOptions}
+        label={'How Many Hands?'}
+        stateUpdate={setNumberOfHands} />
+      <Dropdown
+        options={handSizeOptions}
+        label={'How Many Cards Per Hand?'}
+        stateUpdate={setCardsPerHand}
+      />
       <CardContainer hands={cardHands} />
     </div>
   )

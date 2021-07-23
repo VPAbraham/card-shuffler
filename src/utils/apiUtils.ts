@@ -30,11 +30,11 @@ export const getNewCardPool = async () => {
 };
 
 
-export const getNewCardHand = async (deckId: string) => {
+export const getNewCardHand = async (deckId: string, count: number) => {
   let newCardHand: NewCardHand = { cards: [] };
   try {
     const response = await fetch(
-      `https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=5`,
+      `https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=${count}`,
       { method: 'GET' }
     );
     const data: NewCardHand = await response.json();
