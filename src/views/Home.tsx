@@ -1,5 +1,6 @@
 import CardContainer from '../components/CardContainer';
 import Dropdown from '../components/Dropdown';
+import NavBar from '../components/NavBar';
 import { useEffect, useState } from 'react';
 import { Hand, Card } from '../types';
 import { getNewCardPool, getNewCardHand } from '../utils/apiUtils';
@@ -47,7 +48,7 @@ const Home = () => {
 
   return (
     <div className="home container">
-      <h2>Home Page</h2>
+      <NavBar />
       <button className="button" onClick={shuffleCards}>SHUFFLE</button>
       <Dropdown
         options={handCountOptions}
