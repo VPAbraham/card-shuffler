@@ -33,7 +33,7 @@ const Dropdown = ({ options, label, stateUpdate }: DropdownProps) => {
           <span>{label}</span>
         </button>
       </div>
-      <div className='dropdown-menu ' id='dropdown-menu' role='menu'>
+      <div className='dropdown-menu' role='menu'>
         <div className='dropdown-content'>
           {options.map((val) => {
             return (

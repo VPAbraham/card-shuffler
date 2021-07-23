@@ -45,19 +45,31 @@ const Home = () => {
   }
   const handSizeOptions = [1, 2, 3, 4, 5];
   const handCountOptions = [1, 2, 3, 4];
-
-  return (
-    <div className="home container">
-      <NavBar />
-      <button className="button" onClick={shuffleCards}>SHUFFLE</button>
-      <Dropdown
-        options={handCountOptions}
-        label={'How Many Hands?'}
-        stateUpdate={setNumberOfHands} />
+  const renderHandSizeDropDown = () => {
+    return (
       <Dropdown
         options={handSizeOptions}
         label={'How Many Cards Per Hand?'}
         stateUpdate={setCardsPerHand}
+      />
+    )
+  }
+  const renderHandCountDropDown = () => {
+    return (
+      <Dropdown
+        options={handSizeOptions}
+        label={'How Many Cards Per Hand?'}
+        stateUpdate={setCardsPerHand}
+      />
+    )
+  }
+
+  return (
+    <div className="home container">
+      <NavBar
+        button={<button className="button" onClick={shuffleCards}>SHUFFLE</button>}
+        dropdown1={renderHandCountDropDown}
+        dropdown2={renderHandSizeDropDown}
       />
       <CardContainer hands={cardHands} />
     </div>
