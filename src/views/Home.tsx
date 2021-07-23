@@ -23,13 +23,9 @@ const Home = () => {
     for (let i = 0; i < numberOfHands; i++) {
       const res = await getNewCardHand(deckId)
       if (retrievedHand.length < 1) {
-        console.log("initial hand", res)
         retrievedHand.push(res)
-        console.log("updated hand", retrievedHand)
       } else {
         retrievedHand.push(res)
-        console.log("subsequent hands", res)
-        console.log("updated hand", retrievedHand)
       }
     }
     return retrievedHand;
@@ -45,7 +41,6 @@ const Home = () => {
     await retrieveNewCards();
     let newHand = await retrieveNewHands(cardPool);
     setCardHands(newHand)
-    console.log("PLZ", newHand);
   }
   const handSizeOptions = [1, 2, 3, 4, 5];
   const handCountOptions = [1, 2, 3, 4];
