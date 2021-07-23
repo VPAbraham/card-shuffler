@@ -11,6 +11,7 @@ const Home = () => {
   const [numberOfHands, setNumberOfHands] = useState<number>(4);
   const [cardPool, setCardPool] = useState("");
   const [cardHands, setCardHands] = useState<Hand[]>([]);
+  const [shuffleDisabled, setShuffleDisabled] = useState<boolean>(false);
 
   const retrieveNewCards = async () => {
     const res = await getNewCardPool()
@@ -57,9 +58,9 @@ const Home = () => {
   const renderHandCountDropDown = () => {
     return (
       <Dropdown
-        options={handSizeOptions}
-        label={'How Many Cards Per Hand?'}
-        stateUpdate={setCardsPerHand}
+        options={handCountOptions}
+        label={'How Many Hands of Cards?'}
+        stateUpdate={setNumberOfHands}
       />
     )
   }
@@ -67,7 +68,7 @@ const Home = () => {
   return (
     <div className="home container">
       <NavBar
-        button={<button className="button" onClick={shuffleCards}>SHUFFLE</button>}
+        button={<button className="button" onClick={shuffleCards} disabled={shuffleDisabled} >SHUFFLE</button>}
         dropdown1={renderHandCountDropDown}
         dropdown2={renderHandSizeDropDown}
       />

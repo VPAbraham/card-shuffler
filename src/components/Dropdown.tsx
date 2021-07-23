@@ -12,7 +12,6 @@ const Dropdown = ({ options, label, stateUpdate }: DropdownProps) => {
   const selectOption = (value: any) => {
     setSelectedVal(value);
     setIsActive(false);
-    console.log(selectedVal)
   }
 
   const handleClick = (e: any) => {

@@ -12,8 +12,10 @@ type CardContainerProps = {
 }
 
 const HandContainer = ({ hand }: HandContainerProps) => {
+  const handError = <p>Whoops! Something's wrong with this hand. Try spinning again!</p>
   return (
     <div className='columns hand-container'>
+      {!hand && handError}
       {hand.map((card) => {
         return (
           <>
@@ -31,7 +33,18 @@ const CardContainer = ({ hands }: CardContainerProps) => {
 
   useEffect(() => {
     setCurrentHands(hands);
-  })
+  });
+
+  const cardsEmptyState =
+    <article className="message">
+      <div className="message-header">
+        <p>Shuffle Some Cards</p>
+        <button className="delete" aria-label="delete"></button>
+      </div>
+      <div className="message-body">
+        Select how many hands of cards and cards per hand you would like using the dropdown and then hit the <strong>SHUFFLE</strong> button to
+      </div>
+    </article>
 
   return (
     <div className='card-container is-flex-direction-column'>
