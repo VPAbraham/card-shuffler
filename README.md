@@ -1,25 +1,28 @@
-# Getting Started with Create React App
+# Card Shuffler
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Developed for a coding challenge, Card Shuffler combines React, Typescript, SASS, and the Bulma CSS library to create a simple, yet dry utilization of SPA UI practices. The app consumes the [Deck of Cards API](https://deckofcardsapi.com/) for card data and images of the cards.
+
+# Deployment
+
+The application has been deployed via Google Firebase Hosting and [can be visited here](https://card-shuffler.web.app/).
+A good tutorial on how to deploy your own React application [can be viewed here](https://www.robinwieruch.de/firebase-deploy-react-js).
 
 ## Available Scripts
 
-In the project directory, you can run:
+### `npm install`
+After cloning the repository, run this in the root directory to install all relevant dependencies.
 
-### `yarn start`
+
+### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
-You will also see any lint errors in the console.
+You will also see any lint or Typescript errors in the console.
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
+### `npm run build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -27,44 +30,13 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Further Info
 
-### `yarn eject`
+Stretch goals of this project were to get more experience building an app from the ground up in Typescript and to utilize a CSS framework, as I normally write all my own styles. 
+I found Bulma to be generally easy to pick up and have a lot of tools for reusable and responsive styling.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Icebox
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Some further goals to continue in this project would include to make improvements to the overall design. It could benefit from more styling and additional media queries to make resizing smoother. With more time, I believe I would be able to learn how to accomplish this in Bulma.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Another would be to add more utility to the card shuffling, perhaps to let users play games with the hands they are dealt such as Blackjack or to allow users to freeze a card to not be included in the shuffle. With so many card games out there, there are no shortage of potential feature additions.
