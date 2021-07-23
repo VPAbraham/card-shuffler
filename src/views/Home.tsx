@@ -7,7 +7,7 @@ import { getNewCardPool, getNewCardHand } from '../utils/apiUtils';
 
 const Home = () => {
   const [cardsPerHand, setCardsPerHand] = useState<number>(5);
-  const [numberOfHands, setNumberOfHands] = useState<number>(2);
+  const [numberOfHands, setNumberOfHands] = useState<number>(5);
   const [cardPool, setCardPool] = useState("");
   const [cardHands, setCardHands] = useState<Hand[]>([]);
 
@@ -46,7 +46,7 @@ const Home = () => {
   const handCountOptions = [1, 2, 3, 4];
 
   return (
-    <div className="home">
+    <div className="home container">
       <h2>Home Page</h2>
       <button className="button" onClick={shuffleCards}>SHUFFLE</button>
       <Dropdown options={handCountOptions} label={'How Many Hands?'} />

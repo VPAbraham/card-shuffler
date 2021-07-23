@@ -1,6 +1,7 @@
 import CardDisplay from './CardDisplay';
 import { Hand, Card } from '../types';
 import { useEffect, useState } from 'react';
+import '../styles/CardContainer.scss';
 
 type HandContainerProps = {
   hand: Hand
@@ -12,7 +13,7 @@ type CardContainerProps = {
 
 const HandContainer = ({ hand }: HandContainerProps) => {
   return (
-    <div className='tile hand-container is-flex'>
+    <div className='column hand-container'>
       {hand.map((card) => {
         return (<CardDisplay card={card} />)
       })}
@@ -29,7 +30,7 @@ const CardContainer = ({ hands }: CardContainerProps) => {
   })
 
   return (
-    <div className='tile is-ancestor is-vertical'>
+    <div className='card-container columns is-mobile'>
       {currentHands.map((hand) => {
         return (<HandContainer hand={hand} />)
       })}

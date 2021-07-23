@@ -5,7 +5,7 @@ type CardDisplayProps = {
 
 const CardDisplay = ({ card }: CardDisplayProps) => {
   return (
-    <figure className='image is-128x128'>
+    <figure className='image column'>
       <img src={card.image} />
     </figure>
   )
