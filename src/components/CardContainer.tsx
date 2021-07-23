@@ -38,7 +38,9 @@ const CardContainer = ({ hands }: CardContainerProps) => {
       {currentHands.map((hand, index) => {
         return (
           <>
-            <h3 className='has-text-centered'>{`Hand ${index}`}</h3>
+            <span className='tag is-large is-primary'>
+              {`Hand ${index + 1}`}
+            </span>
             <HandContainer hand={hand} />
           </>
         )
