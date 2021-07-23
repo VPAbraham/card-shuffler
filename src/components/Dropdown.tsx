@@ -12,7 +12,6 @@ const Dropdown = ({ options, label, stateUpdate }: DropdownProps) => {
   const selectOption = (value: any) => {
     setSelectedVal(value);
     setIsActive(false);
-    console.log(selectedVal)
   }
 
   const handleClick = (e: any) => {
@@ -26,8 +25,9 @@ const Dropdown = ({ options, label, stateUpdate }: DropdownProps) => {
   return (
     <div className={`dropdown ${isActive && 'is-active'}`}>
       <div className='dropdown-trigger' >
-        <button className='button' onClick={(() => setIsActive(!isActive))}>
+        <button className='button is-dark' onClick={(() => setIsActive(!isActive))}>
           <span>{label}</span>
+          <span className='icon'>▼</span>
         </button>
       </div>
       <div className='dropdown-menu' role='menu'>
