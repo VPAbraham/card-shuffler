@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-#root, .App {
+#root,.App {
   height: 100%;
 }
 
@@ -19,7 +19,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  width: 80%;
+  width: 85%;
   background-color: rgb(62, 62, 62);
   margin: auto;
   height: fit-content;

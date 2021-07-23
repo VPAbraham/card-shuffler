@@ -41,7 +41,7 @@ const CardContainer = ({ hands }: CardContainerProps) => {
         <p>Shuffle Some Cards</p>
       </div>
       <div className="message-body">
-        Select how many hands of cards and cards per hand you would like using the dropdown and then hit the <strong>SHUFFLE</strong> button to get started.
+        Select how many hands of cards and cards per hand you would like, using the dropdown and then hit the <strong>SHUFFLE</strong> button to get started.
       </div>
     </article>
 

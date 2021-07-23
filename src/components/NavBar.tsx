@@ -16,13 +16,13 @@ const NavBar = ({ button, dropdown1, dropdown2 }: NavBarProps) => {
       <div className='navbar-menu'>
         <div className='navbar-start'>
           <span className='navbar-item'>
-            {button}
-          </span>
-          <span className='navbar-item'>
             {dropdown1()}
           </span>
           <span className='navbar-item'>
             {dropdown2()}
+          </span>
+          <span className='navbar-item'>
+            {button}
           </span>
         </div>
       </div>
