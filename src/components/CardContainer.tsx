@@ -38,9 +38,9 @@ const CardContainer = ({ hands }: CardContainerProps) => {
       {currentHands.map((hand, index) => {
         return (
           <>
-            {/* <span className='tag is-large is-primary'>
+            <span className='tag is-large is-dark mb-1'>
               {`Hand ${index + 1}`}
-            </span> */}
+            </span>
             <HandContainer hand={hand} />
           </>
         )
