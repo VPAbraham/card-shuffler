@@ -2,7 +2,7 @@ import CardContainer from '../components/CardContainer';
 import Dropdown from '../components/Dropdown';
 import NavBar from '../components/NavBar';
 import { useEffect, useState } from 'react';
-import { Hand, Card } from '../types';
+import { Hand } from '../types';
 import { getNewCardPool, getNewCardHand } from '../utils/apiUtils';
 
 
