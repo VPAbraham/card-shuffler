@@ -14,7 +14,7 @@ const NavBar = ({ button, dropdown1, dropdown2 }: NavBarProps) => {
         <h1>CARD SHUFFLER</h1>
       </div>
       <div className='navbar-menu'>
-        <div className='navbar-start'>
+        <div className='navbar-end'>
           <span className='navbar-item'>
             {dropdown1()}
           </span>
