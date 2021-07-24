@@ -9,7 +9,7 @@ type NavBarProps = {
 
 const NavBar = ({ button, dropdown1, dropdown2 }: NavBarProps) => {
   return (
-    <nav className='navbar nav-bar px-3'>
+    <nav className='navbar nav-bar px-3 py-2'>
       <div className='navbar-brand'>
         <h1>CARD SHUFFLER</h1>
       </div>
