@@ -1,5 +1,5 @@
 import CardDisplay from './CardDisplay';
-import { Hand, Card } from '../types';
+import { Hand } from '../types';
 import { useEffect, useState } from 'react';
 import '../styles/CardContainer.scss';
 

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 type DropdownProps = {
   options: any[],
@@ -9,10 +9,6 @@ type DropdownProps = {
 const Dropdown = ({ options, label, stateUpdate }: DropdownProps) => {
   const [isActive, setIsActive] = useState(false);
   const [selectedVal, setSelectedVal] = useState<number>();
-  const selectOption = (value: any) => {
-    setSelectedVal(value);
-    setIsActive(false);
-  }
 
   const handleClick = (e: any) => {
     e.preventDefault();

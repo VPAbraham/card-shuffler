@@ -1,9 +1,29 @@
+@import '../styles/variables.scss';
+
 .nav-bar {
   background-color: rgb(62, 62, 62);
-  color: white;
   border-bottom: solid 2px rgb(55, 55, 55);
   
   h1 {
     font-size: 3rem;
+    font-family: $main-font;
+    color: white;
+  }
+}
+
+@media (min-width: $tablet-min) and (max-width: $tablet-max) {
+  .nav-bar {
+    h1 {
+      font-size: 2rem;
+    }
+  }
+}
+
+@media only screen and (max-width: $mobile) {
+  .nav-bar {
+    h1 {
+      font-size: 1.8rem;
+      text-align: center;
+    }
   }
 }
