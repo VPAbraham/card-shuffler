@@ -8,7 +8,8 @@ type HandContainerProps = {
 }
 
 type CardContainerProps = {
-  hands: Hand[]
+  hands: Hand[],
+  isLoading: boolean
 }
 
 const HandContainer = ({ hand }: HandContainerProps) => {
@@ -28,7 +29,7 @@ const HandContainer = ({ hand }: HandContainerProps) => {
   ;
 }
 
-const CardContainer = ({ hands }: CardContainerProps) => {
+const CardContainer = ({ hands, isLoading }: CardContainerProps) => {
   const [currentHands, setCurrentHands] = useState<Hand[]>([]);
 
   useEffect(() => {
@@ -48,7 +49,8 @@ const CardContainer = ({ hands }: CardContainerProps) => {
   return (
     <div className='card-container is-flex-direction-column'>
       {currentHands.length < 1 && cardsEmptyState}
-      {currentHands.map((hand, index) => {
+      {isLoading && <progress className="progress is-large is-info" max="100">60%</progress>}
+      {!isLoading && currentHands.map((hand, index) => {
         return (
           <>
             <span className='tag is-large is-dark mb-1'>

@@ -5,7 +5,7 @@ type NavBarProps = {
   button: ReactElement,
   dropdown1: Function,
   dropdown2: Function
-}
+};
 
 const NavBar = ({ button, dropdown1, dropdown2 }: NavBarProps) => {
   const [hamburgerIsOpen, setHamburgerIsOpen] = useState(false);
@@ -43,7 +43,7 @@ const NavBar = ({ button, dropdown1, dropdown2 }: NavBarProps) => {
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
 export default NavBar;

@@ -12,6 +12,7 @@ const Home = () => {
   const [cardPool, setCardPool] = useState("");
   const [cardHands, setCardHands] = useState<Hand[]>([]);
   const [shuffleDisabled, setShuffleDisabled] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const retrieveNewCards = async () => {
     const res = await getNewCardPool()
@@ -40,9 +41,12 @@ const Home = () => {
   })
 
   const shuffleCards = async () => {
+    setIsLoading(true);
     await retrieveNewCards();
     let newHand = await retrieveNewHands(cardPool);
-    setCardHands(newHand)
+    setCardHands(newHand);
+    setIsLoading(false);
+
   }
   const handSizeOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   const handCountOptions = [1, 2, 3, 4, 5, 6];
@@ -54,7 +58,7 @@ const Home = () => {
         stateUpdate={setCardsPerHand}
       />
     )
-  }
+  };
   const renderHandCountDropDown = () => {
     return (
       <Dropdown
@@ -63,7 +67,7 @@ const Home = () => {
         stateUpdate={setNumberOfHands}
       />
     )
-  }
+  };
 
   return (
     <div className="home container">
@@ -72,9 +76,9 @@ const Home = () => {
         dropdown1={renderHandCountDropDown}
         dropdown2={renderHandSizeDropDown}
       />
-      <CardContainer hands={cardHands} />
+      <CardContainer hands={cardHands} isLoading={isLoading} />
     </div>
-  )
-}
+  );
+};
 
 export default Home;
